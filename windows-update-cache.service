@@ -1,0 +1,17 @@
+[Unit]
+Description=Nginx - Windows Update Cache Server
+Documentation=https://github.com/evgenyh/windows-update-cache
+After=network.target
+
+[Service]
+Type=forking
+PIDFile=/run/nginx.pid
+ExecStartPre=/usr/sbin/nginx -t -c /etc/nginx/nginx.conf
+ExecStart=/usr/sbin/nginx -c /etc/nginx/nginx.conf
+ExecReload=/bin/kill -s HUP $MAINPID
+ExecStop=/bin/kill -s QUIT $MAINPID
+Restart=on-failure
+RestartSec=5s
+
+[Install]
+WantedBy=multi-user.target

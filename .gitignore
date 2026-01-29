@@ -1,0 +1,22 @@
+# Temporary files
+*.tmp
+*.log
+*.swp
+*.swo
+*~
+
+# Backup files
+*.backup
+*.bak
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Cache directory (if accidentally created locally)
+/nginx/
+
+# IDE files
+.vscode/
+.idea/
+*.iml
